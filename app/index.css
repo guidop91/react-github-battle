@@ -40,3 +40,6 @@ li {
   color: inherit;
 }
 
+.highlighted {
+  color: rgb(187, 46, 31)
+}
