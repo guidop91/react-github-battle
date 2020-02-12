@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Popular extends React.Component {
   constructor(props) {
@@ -18,14 +19,13 @@ export default class Popular extends React.Component {
     return (
       <LanguagesNav
         updateLanguage={this.updateLanguage}
-        selectedLanguage={this.state.selectedLanguage} 
+        selectedLanguage={this.state.selectedLanguage}
       />
     )
   }
 }
 
-function LanguagesNav (props) {
-  const { updateLanguage, selectedLanguage } = props;
+function LanguagesNav ({ updateLanguage, selectedLanguage }) {
   const languages = ['All', 'Javascript', 'Python', 'Java', 'PHP', 'C'];
   const btnClass = (language) => selectedLanguage === language
     ? 'btn-clear nav-link highlighted'
@@ -43,4 +43,9 @@ function LanguagesNav (props) {
       ))}
     </ul>
   )
+}
+
+LanguagesNav.propTypes = {
+  selectedLanguage: PropTypes.string.isRequired,
+  updateLanguage: PropTypes.func.isRequired
 }
