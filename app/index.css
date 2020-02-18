@@ -1,6 +1,6 @@
 html, body, #app {
-  margin: 0;
   height: 100%;
+  margin: 0;
   width: 100%;
 }
 
@@ -17,27 +17,27 @@ li {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
   padding: 50px;
 }
 
 .flex-center {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .btn-clear {
-  border: none;
   background: transparent;
+  border: none;
 }
 
 .nav-link {
+  color: inherit;
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  color: inherit;
 }
 
 .highlighted {
@@ -67,11 +67,11 @@ li {
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
   border-radius: 3px;
-  margin: 0 auto;
   display: block;
+  height: 150px;
+  margin: 0 auto;
+  width: 150px;
 }
 
 .center-text {
@@ -80,18 +80,18 @@ li {
 
 .link {
   color: rgb(187, 46, 31);
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .card-list {
-  margin: 20px 0;
   font-size: 20px;
+  margin: 20px 0;
 }
 
 .card-list li {
-  display: flex;
   align-items: center;
+  display: flex;
   margin: 10px;
 }
 
@@ -100,8 +100,8 @@ li {
 }
 
 .card-list a {
-  font-weight: 500;
   color: inherit;
+  font-weight: 500;
 }
 
 .bg-light {
@@ -111,8 +111,8 @@ li {
 
 .repo {
   margin: 10px 0;
-  width: 250px;
   padding: 20px;
+  width: 250px;
 }
 
 .repo a {
@@ -124,8 +124,8 @@ li {
 }
 
 .container-sm {
-  width: 80%;
   margin: 0 auto;
+  width: 80%;
 }
 
 .battle-instructions {
@@ -139,8 +139,8 @@ li {
 }
 
 .battle-instructions svg {
-  padding: 40px;
   border-radius: 3px;
+  padding: 40px;
 }
 
 .column {
@@ -161,17 +161,17 @@ li {
 
 .player-label {
   font-size: 20px;
-  margin: 5px 0;
   font-weight: 300;
+  margin: 5px 0;
 }
 
 .player-inputs input {
-  padding: 8px;
-  font-size: 16px;
-  flex: 2;
   border-radius: 3px;
   border: none;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  flex: 2;
+  font-size: 16px;
+  padding: 8px;
 }
 
 .player-inputs .input-light {
@@ -184,18 +184,18 @@ li {
 }
 
 .btn {
-  padding: 10px;
-  text-decoration: uppercase;
-  letter-spacing: 0.25em;
+  align-items: center;
   border-radius: 3px;
   border: none;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  letter-spacing: 0.25em;
   max-width: 200px;
+  padding: 10px;
+  text-decoration: none;
+  text-decoration: uppercase;
 }
 
 .dark-btn {
@@ -208,3 +208,24 @@ li {
   color: #c7c7c7;
 }
 
+.players-container {
+  margin: 100px 0;
+}
+
+.avatar-small {
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+
+.player-info {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.player-info .link {
+  margin-left: 10px;
+}
