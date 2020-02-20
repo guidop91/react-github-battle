@@ -109,17 +109,17 @@ li {
   border-radius: 3px;
 }
 
-.repo {
+.card {
   margin: 10px 0;
   padding: 20px;
   width: 250px;
 }
 
-.repo a {
+.card a {
   text-decoration: none;
 }
 
-.repo img {
+.card img {
   margin-bottom: 8px;
 }
 
@@ -232,4 +232,10 @@ li {
 
 .btn-space {
   margin: 40px auto;
+}
+
+.error {
+  color: #FF1616;
+  font-size: 20px;
+  margin: 50px 0;
 }
