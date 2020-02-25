@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle, FaCode } from 'react-icons/fa';
 import Card from './Card';
+import Loading from './Loading';
 
 export default class Popular extends React.Component {
   constructor(props) {
@@ -59,7 +60,7 @@ export default class Popular extends React.Component {
           updateLanguage={this.updateLanguage}
           selectedLanguage={selectedLanguage}
         />
-        {this.isLoading() && <p>Loading...</p>}
+        {this.isLoading() && <Loading text='One moment' speed={100} />}
         {error && <p className='center-text error'>{error}</p>}
         {repos[selectedLanguage] && <ReposGrid repos={repos[selectedLanguage]} />}
       </React.Fragment>
