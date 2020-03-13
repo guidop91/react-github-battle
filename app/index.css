@@ -47,6 +47,10 @@ li {
   cursor: pointer;
 }
 
+.nav li {
+  margin-right: 10px;
+}
+
 .highlighted {
   color: rgb(187, 46, 31)
 }
@@ -58,6 +62,10 @@ li {
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .header-lg {
