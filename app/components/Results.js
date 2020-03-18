@@ -1,4 +1,6 @@
 import React from "react";
+import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 import { battle } from "../utils/api";
 import {
   FaBriefcase,
@@ -22,8 +24,10 @@ export default class Results extends React.Component {
       error: null
     };
   }
+
   componentDidMount() {
-    const { playerOne, playerTwo, resetBattle } = this.props;
+    const { search: searchParams } = this.props.location;
+    const { playerOne, playerTwo } = queryString.parse(searchParams);
 
     battle([playerOne, playerTwo])
       .then(players => {
@@ -41,6 +45,7 @@ export default class Results extends React.Component {
         });
       });
   }
+
   render() {
     const { winner, loser, error, loading } = this.state;
 
@@ -74,7 +79,7 @@ export default class Results extends React.Component {
             <ProfileList profile={loser.profile} />
           </Card>
         </div>
-        <button className='btn dark-btn btn-space' onClick={this.props.resetBattle}>Reset</button>
+        <Link className='btn dark-btn btn-space' to='/battle'>Reset</Link>
       </React.Fragment>
     );
   }
