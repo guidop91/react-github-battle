@@ -1,8 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { ThemeConsumer } from '../context/theme'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { ThemeConsumer } from '../context/theme';
 
-export default function Card({ header, subheader, avatar, href, name, children }) {
+export default function Card({
+  avatar,
+  children,
+  header,
+  href,
+  name,
+  subheader
+}) {
   return (
     <ThemeConsumer>
       {({ theme }) => (
@@ -17,7 +24,6 @@ export default function Card({ header, subheader, avatar, href, name, children }
           </h2>
           {children}
         </div>
-
       )}
     </ThemeConsumer>
   );

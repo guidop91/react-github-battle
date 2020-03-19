@@ -1,29 +1,26 @@
-import React from "react";
+import React from 'react';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
-import { battle } from "../utils/api";
+import { battle } from '../utils/api';
 import {
   FaBriefcase,
   FaCompass,
   FaUser,
   FaUserFriends,
   FaUsers
-} from "react-icons/fa";
-import Card from "./Card";
+} from 'react-icons/fa';
+import Card from './Card';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Tooltip from './Tooltip';
 
 export default class Results extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      winner: null,
-      loser: null,
-      loading: true,
-      error: null
-    };
-  }
+  state = {
+    winner: null,
+    loser: null,
+    loading: true,
+    error: null
+  };
 
   componentDidMount() {
     const { search: searchParams } = this.props.location;
@@ -50,7 +47,7 @@ export default class Results extends React.Component {
     const { winner, loser, error, loading } = this.state;
 
     if (loading === true) {
-      return <Loading text='One moment' speed={100} />;
+      return <Loading text="One moment" speed={100} />;
     }
 
     if (error) {
@@ -61,17 +58,17 @@ export default class Results extends React.Component {
         <div className="grid space-around container-sm">
           <Card
             avatar={winner.profile.avatar_url}
-            header={winner.score === loser.score ? "Tie" : "Winner"}
+            header={winner.score === loser.score ? 'Tie' : 'Winner'}
             href={winner.profile.html_url}
             name={winner.profile.login}
             subheader={`Score: ${winner.score.toLocaleString()}`}
           >
             <ProfileList profile={winner.profile} />
           </Card>
-  
+
           <Card
             avatar={loser.profile.avatar_url}
-            header={winner.score === loser.score ? "Tie" : "Loser"}
+            header={winner.score === loser.score ? 'Tie' : 'Loser'}
             href={loser.profile.html_url}
             name={loser.profile.login}
             subheader={`Score: ${loser.score.toLocaleString()}`}
@@ -79,7 +76,9 @@ export default class Results extends React.Component {
             <ProfileList profile={loser.profile} />
           </Card>
         </div>
-        <Link className='btn dark-btn btn-space' to='/battle'>Reset</Link>
+        <Link className="btn dark-btn btn-space" to="/battle">
+          Reset
+        </Link>
       </React.Fragment>
     );
   }
@@ -122,4 +121,4 @@ function ProfileList({ profile }) {
 
 ProfileList.propTypes = {
   profile: PropTypes.object.isRequired
-}
+};
